@@ -1,0 +1,15 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_1"
+        android:icon="@drawable/ic_baseline_home_24_selected"
+        android:title="HOME" />
+    <item
+        android:id="@+id/page_2"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="HISTORY"/>
+    <item
+        android:id="@+id/page_3"
+        android:icon="@drawable/ic_baseline_build_24"
+        android:title="OPTIONS"/>
+</menu>

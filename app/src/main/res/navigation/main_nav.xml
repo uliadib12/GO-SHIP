@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.adib.go_ship.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_mainfrag" >
+        <action
+            android:id="@+id/action_home_to_history"
+            app:destination="@id/history" />
+        <action
+            android:id="@+id/action_home_to_options"
+            app:destination="@id/options" />
+    </fragment>
+    <fragment
+        android:id="@+id/history"
+        android:name="com.adib.go_ship.History"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_history_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/options"
+        android:name="com.adib.go_ship.Options"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_options_to_history"
+            app:destination="@id/history" />
+        <action
+            android:id="@+id/action_options_to_home"
+            app:destination="@id/home" />
+    </fragment>
+</navigation>
