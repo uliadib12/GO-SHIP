@@ -12,6 +12,15 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="popupMenuStyle">@style/MyPopup</item>
+    </style>
+
+    <style name="MyPopup" parent="@style/Widget.MaterialComponents.PopupMenu">
+        <item name="android:popupBackground">@color/bluewhite</item>
+    </style>
+
+    <style name="PopUpMenuTheme" parent="Widget.AppCompat.PopupMenu">
+        <item name="popupMenuBackground">@color/bluewhite</item>
     </style>
 
     <style name="Fade">

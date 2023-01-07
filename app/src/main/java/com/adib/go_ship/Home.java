@@ -2,11 +2,23 @@ package com.adib.go_ship;
 
 import android.os.Bundle;
 
+import androidx.annotation.MenuRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +72,18 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mainfrag, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+       List<String> items = Arrays.asList("Tunai", "Transfer");
+       ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.list_item, items);
+       TextInputLayout inputPembayaran = getView().findViewById(R.id.menu_list);
+       AutoCompleteTextView editText = (AutoCompleteTextView) inputPembayaran.getEditText();
+       editText.setText("Tunai", false);
+       editText.setAdapter(adapter);
+       editText.setDropDownBackgroundDrawable(getResources().getDrawable(R.color.bluewhite));
     }
 }
