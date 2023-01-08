@@ -21,7 +21,7 @@
         android:insetBottom="0dp"
         android:fontFamily="@font/kanit"
         android:text="Sukses"
-        android:textColor="@color/black"
+        android:textColor="@color/graySoft"
         android:textAllCaps="false"
         app:rippleColor="@null"
         />
@@ -39,11 +39,11 @@
         android:insetBottom="0dp"
         android:fontFamily="@font/kanit"
         android:text="Menunggu"
-        android:textColor="@color/black"
+        android:textColor="@color/graySoft"
         android:textAllCaps="false"
         app:rippleColor="@null"/>
 
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/pembatalan_button"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -51,7 +51,15 @@
         app:cardCornerRadius="0dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toEndOf="@+id/menunggu_button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:cornerRadius="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:fontFamily="@font/kanit"
+        android:text="Pembatalan"
+        android:textColor="@color/graySoft"
+        android:textAllCaps="false"
+        app:rippleColor="@null"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
@@ -75,8 +83,7 @@
         app:layout_constraintGuide_percent="1" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.adib.go_ship.History.Menunggu"
+        android:id="@+id/fragmentHistoryMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -4,6 +4,7 @@
     <color name="primaryColorVariant">#3C8ED6</color>
     <color name="bluewhite">#C8E5FF</color>
     <color name="grayLight">#80000000</color>
+    <color name="graySoft">#DA8E8E8E</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

@@ -14,7 +14,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainMenuActivity extends AppCompatActivity {
     protected BottomNavigationView bottomNavigationView;
-
     private static final int NUM_PAGES = 3;
     private ViewPager2 viewPager;
     private FragmentStateAdapter pagerAdapter;
@@ -23,7 +22,10 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        setupViewPager();
+    }
 
+    private void setupViewPager(){
         viewPager = findViewById(R.id.viewPager_mainMenu);
         pagerAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pagerAdapter);
