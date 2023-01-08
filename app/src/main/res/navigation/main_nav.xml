@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/history"
-        android:name="com.adib.go_ship.History"
+        android:name="com.adib.go_ship.HistoryMain"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" >
         <action

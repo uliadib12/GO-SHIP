@@ -8,10 +8,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -78,12 +81,23 @@ public class Home extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       List<String> items = Arrays.asList("Tunai", "Transfer");
-       ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.list_item, items);
-       TextInputLayout inputPembayaran = getView().findViewById(R.id.menu_list);
-       AutoCompleteTextView editText = (AutoCompleteTextView) inputPembayaran.getEditText();
-       editText.setText("Tunai", false);
-       editText.setAdapter(adapter);
-       editText.setDropDownBackgroundDrawable(getResources().getDrawable(R.color.bluewhite));
+        MainMenuActivity mainMenuActivity = (MainMenuActivity)getActivity();
+
+        List<String> items = Arrays.asList("Tunai", "Transfer");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.list_item, items);
+        TextInputLayout inputPembayaran = getView().findViewById(R.id.menu_list);
+        AutoCompleteTextView editText = (AutoCompleteTextView) inputPembayaran.getEditText();
+        editText.setText("Tunai", false);
+        editText.setAdapter(adapter);
+        editText.setDropDownBackgroundDrawable(getResources().getDrawable(R.color.bluewhite));
+
+        Button btnPesan = getView().findViewById(R.id.pesan_button);
+        btnPesan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainMenuActivity.bottomNavigationView.setSelectedItemId(R.id.page_2);
+            }
+        });
+
     }
 }
