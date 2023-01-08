@@ -10,7 +10,7 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainMenuActivity extends FragmentActivity {
+public class MainMenuActivity extends AppCompatActivity {
     protected BottomNavigationView bottomNavigationView;
 
     private static final int NUM_PAGES = 3;
