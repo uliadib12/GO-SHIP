@@ -9,16 +9,16 @@ public class MenuBarViewModel extends ViewModel {
 
     public MutableLiveData<Integer> getSelectedMenu() {
         if (selectedMenu == null) {
-            selectedMenu = new MutableLiveData<>(0);
-            previousSelectedMenu = new MutableLiveData<>(0);
+            selectedMenu = new MutableLiveData<>(1);
+            previousSelectedMenu = new MutableLiveData<>(1);
         }
         return selectedMenu;
     }
 
     public MutableLiveData<Integer> getPreviousSelectedMenu() {
         if (previousSelectedMenu == null) {
-            selectedMenu = new MutableLiveData<>(0);
-            previousSelectedMenu = new MutableLiveData<>(0);
+            selectedMenu = new MutableLiveData<>(1);
+            previousSelectedMenu = new MutableLiveData<>(1);
         }
         return previousSelectedMenu;
     }

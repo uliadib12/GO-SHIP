@@ -121,7 +121,7 @@ public class HistoryMain extends Fragment {
     private void setUpChildFragment(){
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        transaction.add(R.id.fragmentHistoryMain, new Sukses());
+        transaction.add(R.id.fragmentHistoryMain, new Menunggu());
         transaction.addToBackStack(null);
         transaction.commit();
     }

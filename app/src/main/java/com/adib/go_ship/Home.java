@@ -1,5 +1,7 @@
 package com.adib.go_ship;
 
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.MenuRes;
@@ -7,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +25,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Arrays;
 import java.util.List;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -88,5 +93,37 @@ public class Home extends Fragment {
         editText.setText("Tunai", false);
         editText.setAdapter(adapter);
         editText.setDropDownBackgroundDrawable(getResources().getDrawable(R.color.bluewhite));
+
+        Button pesanButton = getView().findViewById(R.id.pesan_button);
+        pesanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SweetAlertDialog pDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
+                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                pDialog.setTitleText("Loading");
+                pDialog.setCancelable(false);
+                pDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+                        Toast.makeText(getContext(), "Pemesanan Berhasil", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                pDialog.show();
+
+                new CountDownTimer(3000, 1000) {
+                    @Override
+                    public void onTick(long l) {
+                    }
+
+                    public void onFinish() {
+                        pDialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+                        pDialog.setTitleText("Pemesanan Berhasil");
+                        pDialog.getButton(SweetAlertDialog.BUTTON_CONFIRM).setVisibility(View.GONE);
+                        pDialog.setCancelable(true);
+                    }
+                }.start();
+            }
+        });
     }
 }
