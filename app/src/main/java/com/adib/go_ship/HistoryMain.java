@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.adib.go_ship.AdapterRecyclerView.MenungguAdapter;
 import com.adib.go_ship.DataLayer.MenuBarViewModel;
 import com.adib.go_ship.History.Menunggu;
 import com.adib.go_ship.History.Pembatalan;

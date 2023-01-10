@@ -1,13 +1,19 @@
 package com.adib.go_ship.History;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.adib.go_ship.AdapterRecyclerView.MenungguAdapter;
 import com.adib.go_ship.R;
 
 /**
@@ -62,5 +68,31 @@ public class Menunggu extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menunggu, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setUpRecycleView();
+    }
+
+    private void setUpRecycleView(){
+        RecyclerView recyclerView = getView().findViewById(R.id.rv_menunggu);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(new MenungguAdapter());
+
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                super.getItemOffsets(outRect, view, parent, state);
+
+                int position = parent.getChildAdapterPosition(view);
+                boolean isLast = position == state.getItemCount()-1;
+
+                if(!isLast){
+                    outRect.bottom = 20;
+                }
+            }
+        });
     }
 }
